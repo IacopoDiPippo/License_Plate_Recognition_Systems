@@ -2,9 +2,9 @@ from skimage.io import imread
 from skimage.filters import threshold_otsu
 import matplotlib.pyplot as plt
 
-car_image = imread("car.jpg", as_gray=True)
+car_image = imread("License_Plate_Recognition_Systems/car6.jpg", as_gray=True)
 # it should be a 2 dimensional array
-print(car_image.shape)
+
 
 # the next line is not compulsory however, a grey scale pixel
 # in skimage ranges between 0 & 1. multiplying it with 255
