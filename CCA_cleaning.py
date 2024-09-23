@@ -8,11 +8,15 @@ from image_procesing import gray_car_image
 # this gets all the connected regions and groups them together
 label_image = measure.label(binary_car_image)
 
+#The proportion of the width of the license plate region to the full image ranges between 15% and 40%.
 # getting the maximum width, height and minimum width and height that a license plate can be
 plate_dimensions = (0.08*label_image.shape[0], 0.2*label_image.shape[0], 0.15*label_image.shape[1], 0.4*label_image.shape[1])
 min_height, max_height, min_width, max_width = plate_dimensions
+
+#Prende le coordinate e taglia l'immagine sulla parte interessata, ovvero quella che dovrebbe contenere la targa
 plate_objects_cordinates = []
 plate_like_objects = []
+
 fig, (ax1) = plt.subplots(1)
 ax1.imshow(gray_car_image, cmap="gray");
 
@@ -24,6 +28,7 @@ for region in regionprops(label_image):
 
     # the bounding box coordinates
     min_row, min_col, max_row, max_col = region.bbox
+
     region_height = max_row - min_row
     region_width = max_col - min_col
     # ensuring that the region identified satisfies the condition of a typical license plate

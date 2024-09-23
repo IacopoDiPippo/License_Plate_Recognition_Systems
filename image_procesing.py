@@ -13,6 +13,9 @@ car_image = imread("License_Plate_Recognition_Systems/car6.jpg", as_gray=True)
 gray_car_image = car_image * 255
 fig, (ax1, ax2) = plt.subplots(1, 2)
 ax1.imshow(gray_car_image, cmap="gray")
+
+#Uso algoritmo otsu per rendere più evidenti i contorni
+#Such that CCA is possible
 threshold_value = threshold_otsu(gray_car_image)
 binary_car_image = gray_car_image > threshold_value
 ax2.imshow(binary_car_image, cmap="gray")
