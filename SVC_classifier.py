@@ -46,8 +46,7 @@ def cross_validation(model, num_of_fold, train_data, train_label):
     print(accuracy_result * 100)
 
 
-current_dir = os.path.dirname(os.path.realpath(__file__))
-
+current_dir = 'C:/Users/iacop/Desktop/Programmazione/Github/License_Plate_Recognition_Systems/License-Plate-Recognition-Nigerian-vehicles master training_data-train20X20'
 training_dataset_dir = os.path.join('C:/Users/iacop/Desktop/Programmazione/Github/License_Plate_Recognition_Systems/License-Plate-Recognition-Nigerian-vehicles master training_data-train20X20')
 
 image_data, target_data = read_training_data(training_dataset_dir)
